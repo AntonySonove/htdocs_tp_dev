@@ -1,0 +1,16 @@
+footer{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    background-color: rgba(0,0,0,0.5);
+    min-height: 100%;
+}
+footer> a{
+    color: white;
+}
+footer> a:hover{
+    text-decoration: underline;
+}

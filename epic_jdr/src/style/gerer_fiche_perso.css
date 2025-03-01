@@ -1,0 +1,43 @@
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 300px;
+    gap: 50px;
+}
+.gridGerer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+h4{
+    color: white;
+    /* margin-bottom: 50px; */
+}
+article{
+    margin: 25px 50px;
+}
+.article:nth-child(odd){
+    grid-column: 1;
+    margin: 25px;
+}
+h5{
+    margin-bottom: 25px;
+}
+.boutonCreerModifier{
+    width: 144px;
+    height: 44px;
+    cursor: pointer;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boutonDownload{
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divBoutonCreerModifier{
+    display: flex;
+}

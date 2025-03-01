@@ -1,0 +1,127 @@
+.quiz-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: stretch;
+    padding: 0px 10px;
+    div {
+        background-color: black;
+    }
+}
+
+.quiz-card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    background-color: var(--yellow);
+    max-width: 172px;
+    img {
+        margin: 5px 5px 0px 5px;
+        /* padding: 5px 5px 0px 5px; */
+        object-fit: contain;
+        aspect-ratio: 1/1;
+        border-radius: 10px;
+        background-color: white;
+    }
+    p {
+        margin: 2px 0px;
+        text-align: center;
+    }
+}
+
+#choices, .quiz-section {
+    display: grid;
+    gap: 15px;
+    margin: 0px 20px;
+    padding: 20px 0px;
+    h2 {
+        margin: 0px;
+        font-weight: 900;
+    }
+}
+
+#score-title {
+    font-size: 18px;
+}
+
+.result-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 180px;
+    margin: 0px;
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+#scores-container {
+    padding: 0px 10px;
+    /* padding: 0px 10px 10px 10px; */
+}
+
+#best-scores {
+    border-radius: 12px;
+    overflow: hidden;
+    display: none;
+    background-color: white;
+}
+
+.scoreline {
+    display: grid;
+    grid-template-columns: 2fr 4.5fr 3.5fr;
+    padding: 5px 0px;
+    span {
+        text-align: center;
+    }
+}
+
+.score-header {
+    font-weight: 900;
+}
+
+/* .header-input, .header-element, .choice-input, .choice-button, .result-box { */
+.header-element, .choice-button, .result-box {
+    height: 46px;
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    text-align: center;
+}
+
+.header-element {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.answer-selection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    /* input[type="checkbox"] {
+        appearance: none;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+        min-width: 20px;
+        min-height: 20px;
+    } */
+    /* input {
+        min-height: 500px;
+    } */
+}
+
+#accordion-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    span {
+        justify-self: flex-end;
+    }
+}

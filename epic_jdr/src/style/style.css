@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: "instrument", sans-serif;
+}
+body{
+    background-color: #FBF4EE;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex: 1;
+}
+/* composants */
+.divJaune{
+    background-color: #F7EADE;
+    border: solid 1px #8000ff;
+    border-radius: 3px;
+    color: black;
+    padding: 25px;
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+}
+.boutonJaune{
+    background-color: #EBCBAD;
+    border: solid 1px #8000ff;
+    border-radius: 3px;
+    font-weight: bold;
+    color: black;
+}
+.boutonJaune:hover{
+    transform: scale(120%);
+    transition: 0.1s;
+}
+/* .boutonBlanc{
+    background-color: #FBF4EE;
+    border: solid 3px #8000ff;
+    border-radius: 3px;
+    font-weight: bold;
+    color: black;
+} */
+input{
+    width: 200px;
+    height: 25px;
+    border: solid 1px black;
+}
+
+/* flex */
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+}
+.spaceBetween{
+    justify-content: space-between;
+}
+.gap25{
+    gap: 25px;
+}
+.justifyCenter{
+    justify-content: center;
+}
+.justifyEnd{
+    justify-content: end;
+}
+.alignStart{
+    align-items: flex-start;
+}
+.alignEnd{
+    align-items: flex-end;
+}
+.alignCenter{
+    align-items: center;
+}
+.justifySelfStart{
+    justify-self: flex-start;
+}
+.alignSelfStart{
+    align-self: flex-start;
+}

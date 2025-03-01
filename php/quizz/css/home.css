@@ -1,0 +1,71 @@
+.banner {
+    background-image: url("../assets/img/banner.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-family: Stopbuck;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+/* MEHDI */
+.icons-small {
+    font-size: 16px !important;
+}
+
+.banner h1 {
+    margin-top: 1;
+    font-family: Stopbuck;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    /* text-align: center; */
+}
+
+.form-button {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.switch-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 10fr 3fr;
+    justify-content: center;
+    align-items: baseline;
+    padding-top: 10px;
+    span + span {
+        grid-column: 3 / span 1;
+        text-align: center;
+    }
+}
+
+#switch {
+    grid-column: 2 / span 1;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    justify-self: center;
+    align-self: center;
+}
+
+#signup-form, #login-form {
+    padding: 0px 10px 10px 10px;
+    label {
+        align-self: flex-start;
+    }
+    input {
+        width: 100%;
+        padding: 0px;
+    }
+}

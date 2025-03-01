@@ -1,0 +1,85 @@
+footer, header {
+    background-color: var(--teal);
+    font-family: Stopbuck;
+    min-height: 54px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    align-items: center;
+    color: white;
+    img {
+        height: 36px;
+        width: auto;
+    }
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.site-title {
+    text-align: center;
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+}
+
+.burger-icon {
+    font-size: 36px !important;
+    user-select: none;
+}
+
+.burger-icon:hover {
+    cursor: pointer;
+}
+
+footer {
+    flex-shrink: 0;
+    font-family: Inter;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    font-size: 0.55em;
+    color: white;
+    
+    img {
+        height: 32px;
+        width: auto;
+    }
+    a + a img{
+        box-sizing: border-box;
+        border: solid 1px white;
+        border-radius: 5px;
+    }
+    .footer-icons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 8px;
+        margin: auto 8px;
+    }
+    .footer-coordinates {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    section + section + section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+    }
+    section div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.icons-small {
+    font-size: 16px !important;
+}
