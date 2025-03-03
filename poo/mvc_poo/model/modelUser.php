@@ -13,7 +13,7 @@
         //! constructor
 
         public function __construct() {
-            $this->bdd = new PDO("mysql:host=localhost;dbname=users");
+            $this->bdd = connect();
         }
 
 
@@ -55,10 +55,10 @@
         }
 
 
-        public function getBdd(): ?string{
+        public function getBdd(): ?PDO{
             return $this->bdd;
         }
-        public function setBdd(?string $bdd): ModelUser{
+        public function setBdd(?PDO $bdd): ModelUser{
             $this->bdd = $bdd;
             return $this;
         }
@@ -68,25 +68,76 @@
 
         public function add():string{
             try{
-                
-                $req=$this->getBdd()->prepare("INSERT INTO users (nickname, email, pssword) VALUES (?,?,?)");
-                //* binding des paramètres et execution de la reqête
-                $req->bindParam(1,$this->getNickname(),PDO::PARAM_STR);
-                $req->bindParam(2,$this->getEmail(),PDO::PARAM_STR);
-                $req->bindParam(3,$this->getPassword(),PDO::PARAM_STR);
+
+                //* préparation de la requête
+                $req= $this->getBdd()->prepare("INSERT INTO users (nickname, email, psswrd) VALUES (?,?,?)");
+
+                //* récupération des données de l'objet Model
+                $nickname= $this->getNickname();
+                $email= $this->getEmail();
+                $password= $this->getPassword();
+
+                //*bindParam
+                $req->bindParam("1", $nickname, PDO::PARAM_INT);
+                $req->bindParam("2", $email, PDO::PARAM_INT);
+                $req->bindParam("3", $password, PDO::PARAM_INT);
+
+                //* execution de la rquête
                 $req->execute();
-                $message="<p style='color:green'>*Compte utilisateur créé</p>";
-                
-                
+
+                return "<p>$nickname à été enregistré</p>";
+      
             }catch(EXCEPTION $error){
                 return $error->getMessage();
             }
-            return $message;
+            
         }
-        // return "<p style='color: green'>utilisateur enregistré</p>";
-        // return "<p style='color: red'>erreur</p>";
+       
 
-        
+        public function getAll() :array | string{
+            try{
+                //* préparer la requête
+                $req= $this->bdd->prepare("SELECT nickname, email, psswrd FROM users");
+                
+                //*executer la requête
+                $req->execute();
+
+                //* récupération de la réponse de la bdd
+                $data=$req->fetchAll(PDO::FETCH_ASSOC); //? sert a définir le format du tableau (ici un tableau assiociatif)
+
+                return $data;
+
+            }catch(EXCEPTION $error){
+                echo $error->getMessage();
+                return "";
+            }
+        }
+
+
+        public function getByEmail() :array | string{
+            try{
+                //* préparer la requête
+                $req= $this->bdd->prepare("SELECT id, nickname, email, psswrd FROM users WHERE email=?");
+
+                //* récupération de l'email de l'objet Model
+                $email= $this->getEmail();
+
+                //* binding
+                $req->bindParam("1", $email, PDO::PARAM_INT);
+                
+                //*executer la requête
+                $req->execute();
+
+                //* récupération de la réponse de la bdd
+                $data=$req->fetchAll(PDO::FETCH_ASSOC);
+
+                return $data;
+
+            }catch(EXCEPTION $error){
+                return $error->getMessage();
+            }
+        }
+
     }
     
 ?>
