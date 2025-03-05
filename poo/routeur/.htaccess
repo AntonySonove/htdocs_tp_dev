@@ -1,0 +1,13 @@
+#Activation du rewrite des URL
+RewriteEngine On
+
+#base du projet (emplacement à partir de la racine du serveur)
+RewriteBase /htdocs_tp_dev/poo/routeur/
+
+#si ce n'est pas un répertoire
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Si ce n'est pas un fichier
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php [QSA,L]
