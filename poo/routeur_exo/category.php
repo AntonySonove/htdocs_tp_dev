@@ -94,5 +94,3 @@ class ControllerCategory extends GenericController{
     }
 }
 
-$category = new ControllerCategory(new ViewCategory(), new ModelCategory());
-$category->render();

@@ -4,12 +4,7 @@ session_start();
 
 //Import des Ressources
 
-include './utils/utils.php';
-include './Model/modelUser.php';
-include './View/viewHeader.php';
-include './View/viewFooter.php';
-include './View/viewHome.php';
-include './Controller/genericController.php';
+
 
 class HomeController extends GenericController{
     private ?ViewHome $viewHome;
@@ -158,5 +153,5 @@ class HomeController extends GenericController{
     }
 }
 
-$home = new HomeController(new ViewHome(), new ModelUser());
-$home->render();
+// $home = new HomeController(new ViewHome(), new ModelUser());
+// $home->render();

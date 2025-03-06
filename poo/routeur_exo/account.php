@@ -3,10 +3,7 @@
 session_start();
 
 //Import des ressources
-include './View/viewHeader.php';
-include './View/viewFooter.php';
-include './View/viewAccount.php';
-include './Controller/genericController.php';
+
 
 class ControllerAccount extends GenericController{
     private ?ViewAccount $viewAccount;

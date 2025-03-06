@@ -15,12 +15,26 @@ isset($url["path"]) ? $path = $url["path"] : $path="/";
 //* pour la page d'accueil
 switch($path){
     case "/htdocs_tp_dev/poo/routeur/":
-          
-        $home=new ControllerHome(new ViewHome(), new ModelUser());
+        include './utils/utils.php';
+        include './Model/modelUser.php';
+        include './View/viewHeader.php';
+        include './View/viewFooter.php';
+        include './View/viewHome.php';
+        include './Controller/genericController.php';
+                
+        $home=new HomeController(new ViewHome(), new ModelUser());
         $home->render();
+        
         break;
 
     case "/htdocs_tp_dev/poo/routeur/monCompte":
+        include './View/viewHeader.php';
+        include './View/viewFooter.php';
+        include './View/viewAccount.php';
+        include './Controller/genericController.php';
+
+        $category = new ControllerCategory(new ViewCategory(), new ModelCategory());
+        $category->render();
         
         break;
 
