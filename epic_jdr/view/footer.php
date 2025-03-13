@@ -7,6 +7,6 @@
         </footer>
     </div>
     <script src="./src/script/header.js" type="module"></script>
-    <!--<script src="./src/script/lancer_partie.js" type="module"></script>-->
+    <script src="./src/script/lancer_partie.js" type="module"></script>
 </body>
 </html>

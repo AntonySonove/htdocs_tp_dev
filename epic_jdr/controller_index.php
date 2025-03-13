@@ -61,15 +61,16 @@
                         $_SESSION["email"] = $data[0]["email"];
                         // print_r($data);
                         header("Location:./controller_compte.php");
-                    }  
+                    } else{$messageConnexion="<p style='color:red'>*Login et/ou Mot de Passe incorect(s)</p>";
+                    } 
                 }else{
-                    $messageConnexion="<p style='color:red'>Login et/ou Mot de Passe incorect(s)</p>";
+                    $messageConnexion="<p style='color:red'>*Login et/ou Mot de Passe incorect(s)</p>";
                 }
             }else{
-                $messageConnexion="<p style='color:red'>email invalide</p>";
+                $messageConnexion="<p style='color:red'>*email invalide</p>";
             }
         }else{
-            $messageConnexion="<p style='color:red'>Les champs sont vides</p>";
+            $messageConnexion="<p style='color:red'>*Les champs sont vides</p>";
         }
     }
 
