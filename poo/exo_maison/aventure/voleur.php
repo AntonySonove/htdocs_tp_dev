@@ -1,12 +1,19 @@
 <?php
-    class GVoleur{
+    class Voleur extends Personnage{
 
-        public function __construct(?string $nom, ?string $description,?int $pdv,?int $heroisme){
-            $this->nom = $nom;
-            $this->description = $description;
-            $this->pdv = $pdv;
+
+        //! constructor
+        public function __construct(?string $nom, ?string $description,?int $pdv){
+            $this->setNom($nom);
+            $this->setDescription($description);
+            $this->setPdv($pdv);
         }
 
         
+        //! method
+        public function devenirInvisible():string{
+            echo "<p>{$this->getNom()} devient une ombre.</p>";
+            return "";
+        }
     }
 ?>

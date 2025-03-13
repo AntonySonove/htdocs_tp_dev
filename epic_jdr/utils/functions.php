@@ -1,5 +1,5 @@
 <?php
-    function nettoyage($data){
+    function sanitize($data){
         return $data=htmlentities(strip_tags(stripcslashes(trim($data))));
     }
     function dbConnect(){

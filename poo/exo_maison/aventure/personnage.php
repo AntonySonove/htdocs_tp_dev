@@ -1,11 +1,14 @@
 <?php
     class Personnage{
+
+        //! attributs
         private ?string $nom;
         private ?string $description;
         private ?int $pdv;
         private Arme $arme;
 
 
+        //! constructor
         public function __construct(?string $nom,?string $description,?int $pdv){
             $this->nom = $nom;
             $this->description = $description;
@@ -13,6 +16,7 @@
         }
 
 
+        //!getter et setter
         public function getNom(): ?string{
             return $this->nom;
         }
@@ -43,6 +47,13 @@
         public function setArme(?Arme $arme): Personnage{
             $this->arme = $arme;
             return $this;
+        }
+
+
+        //! méthod
+        public function parler($destinataire, $message=""):?string{
+            echo "<p>{$this->nom} à {$destinataire->nom} : {$message}</p>";
+            return "";
         }
 
     }
