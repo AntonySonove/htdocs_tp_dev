@@ -62,6 +62,9 @@ input{
 .gap25{
     gap: 25px;
 }
+.gap5{
+    gap: 5px;
+}
 .justifyCenter{
     justify-content: center;
 }
@@ -82,4 +85,7 @@ input{
 }
 .alignSelfStart{
     align-self: flex-start;
+}
+.textCenter{
+    text-align: center;
 }

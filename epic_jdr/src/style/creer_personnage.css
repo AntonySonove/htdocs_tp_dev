@@ -1,0 +1,15 @@
+#mainCreerPersonnage{
+    padding: 50px 300px;
+    gap : 25px;
+}
+
+#formCreerPersonnage{
+    width: 400px;
+}
+
+@media (max-width:1000px) {
+    #mainCreerPersonnage{
+        padding: 50px 50px;
+    }
+    
+}

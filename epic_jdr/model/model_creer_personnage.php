@@ -106,7 +106,23 @@ class ModelCreerPersonnage{
             $req->execute();
             
             
-            return "Nouveau personnage enregistré";
+            return "<span style= 'color: green'>*Nouveau personnage enregistré</span>";
+
+        }catch(Exception $error){
+            return $error->getMessage();
+        }
+    }
+
+    public function getByName():array | string{
+        try{
+
+            $req=$this->getBdd()->prepare("SELECT name_character, lp, mp, atk, def, atkm, defm, speed, id_character,id_user FROM characters WHERE name_character=?");
+            $name=$this->getName();
+            $req->bindParam(1,$name,PDO::PARAM_STR);
+            $req->execute();
+            $data=$req->fetchAll(PDO::FETCH_ASSOC);
+
+            return $data;
 
         }catch(Exception $error){
             return $error->getMessage();

@@ -2,10 +2,10 @@
     height: 94px;
     filter: drop-shadow(0 0 3px #8000ff);
 }
-main{
+#mainIndex{
     display: flex;
     flex-direction: column;
-    margin: 50px 300px;
+    padding: 50px 300px;
     gap: 50px;
 }
 #connexionInscription{

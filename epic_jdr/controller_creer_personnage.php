@@ -38,7 +38,7 @@ class ControllerCreerPersonnage{
             //* vérifier si les chams sont vides
             if(empty($_POST["name"]) || empty($_POST["lp"]) || empty($_POST["mp"]) || empty($_POST["atk"]) || empty($_POST["def"]) || empty($_POST["atkm"]) || empty($_POST["defm"]) || empty($_POST["speed"])){
 
-                return "Un ou plusieurs champs sont vides";
+                return "<span style='color: red'>*Un ou plusieurs champs sont vides</span>";
 
             }else{
                 //* nettoyage des données
@@ -50,17 +50,28 @@ class ControllerCreerPersonnage{
                 $atkm=sanitize($_POST["atkm"]);
                 $defm=sanitize($_POST["defm"]);
                 $speed=sanitize($_POST["speed"]);
+
                 
             }
+
+            //* vérifier que le nom du personnage est disponible en bdd
+            $this->getModelCreerPersonnage()->setName($name);
+            $data=$this->getModelCreerPersonnage()->getByName();
+
+            if(!empty($data)){
+            
+                return "<span style='color: red'>*Ce nom n'est pas disponible</span>";
+            }
+
             $this->getModelCreerPersonnage()->setName($name)->setLp($lp)->setMp($mp)->setAtk($atk)->setDef($def)->setAtkm($atkm)->setDefm($defm)->setSpeed($speed);
             
-            $this->getModelCreerPersonnage()->addCharacter();
+            return $this->getModelCreerPersonnage()->addCharacter();
         }
 
         return "";
     }
 
-    public function render(){
+    public function render():void{
 
         //* charger les messages de la fonction signUpCharacter
         $message=$this->signUpCharacter();

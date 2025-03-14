@@ -14,10 +14,10 @@
                 //* vérifier que les mots de passes correspondent
                 if($_POST["password"]===$_POST["password2"]){
                     //* nettoyage des données
-                    $nickname=nettoyage($_POST["nickname"]);
-                    $email=nettoyage($_POST["email"]);
-                    $password=nettoyage($_POST["password"]);
-                    $password2=nettoyage($_POST["password2"]);
+                    $nickname=sanitize($_POST["nickname"]);
+                    $email=sanitize($_POST["email"]);
+                    $password=sanitize($_POST["password"]);
+                    $password2=sanitize($_POST["password2"]);
                     //* chiffrage du mot de passe
                     $password=password_hash($password,PASSWORD_BCRYPT);
                     $bdd=dbConnect();
@@ -46,8 +46,8 @@
             if(filter_var($_POST["emailConnexion"],FILTER_VALIDATE_EMAIL)){
                 
                 //* nettoyage des données
-                $email = nettoyage($_POST["emailConnexion"]);
-                $password = nettoyage($_POST["passwordConnexion"]);
+                $email = sanitize($_POST["emailConnexion"]);
+                $password = sanitize($_POST["passwordConnexion"]);
                 $bdd=dbConnect();
                 $data=readUserByEmail($bdd, $email);
                 // var_dump($data);

@@ -1,4 +1,4 @@
-<main>
+<main id="mainIndex">
     <div class="divJaune">
         <h1>Bienvenue sur EPIC JDR</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eos omnis quaerat odit quam doloribus hic rem? Neque, nam tenetur doloremque nulla nostrum adipisci itaque. Commodi, esse temporibus tempora doloribus ipsam odit, molestiae unde nam officiis ut debitis doloremque iure porro fugiat quod corporis cupiditate itaque. Voluptate porro deserunt fuga explicabo iste consequatur minus soluta necessitatibus ab magni, nulla beatae. Maiores illum unde excepturi blanditiis ut iusto, dolore iste libero at ea ratione pariatur dolorem ducimus velit est atque non magni nihil laboriosam, aliquid autem? Tenetur reprehenderit dolorem at, odit libero dignissimos eaque aperiam quibusdam a sunt tempora! Natus, repellendus.</p>
