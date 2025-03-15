@@ -31,7 +31,7 @@ main{
     font-weight: bold;
     color: black;
 }
-.boutonJaune:hover{
+.scale:hover{
     transform: scale(120%);
     transition: 0.1s;
 }
@@ -58,6 +58,9 @@ input{
 }
 .spaceBetween{
     justify-content: space-between;
+}
+.spaceAround{
+    justify-content: space-around;
 }
 .gap25{
     gap: 25px;
@@ -88,4 +91,12 @@ input{
 }
 .textCenter{
     text-align: center;
+}
+.width100{
+    width: 100%;
+}
+
+/* Souris */
+.pointer{
+    cursor: pointer;
 }

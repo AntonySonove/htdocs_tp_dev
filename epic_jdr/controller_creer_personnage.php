@@ -49,9 +49,7 @@ class ControllerCreerPersonnage{
                 $def=sanitize($_POST["def"]);
                 $atkm=sanitize($_POST["atkm"]);
                 $defm=sanitize($_POST["defm"]);
-                $speed=sanitize($_POST["speed"]);
-
-                
+                $speed=sanitize($_POST["speed"]);   
             }
 
             //* vérifier que le nom du personnage est disponible en bdd
@@ -63,8 +61,10 @@ class ControllerCreerPersonnage{
                 return "<span style='color: red'>*Ce nom n'est pas disponible</span>";
             }
 
+            //* donner les informations au model
             $this->getModelCreerPersonnage()->setName($name)->setLp($lp)->setMp($mp)->setAtk($atk)->setDef($def)->setAtkm($atkm)->setDefm($defm)->setSpeed($speed);
             
+            //* demander au model d'utiliser sa fonction add
             return $this->getModelCreerPersonnage()->addCharacter();
         }
 

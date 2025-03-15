@@ -1,9 +1,3 @@
-#container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex:1;
-}
 header{
     display: flex;
     width: 100%;
@@ -12,11 +6,9 @@ header{
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
 }
-nav{
+#navBar{
     display: flex;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: row;
 }
 #logo{
     height: 150px;
@@ -30,26 +22,10 @@ a{
     text-decoration: none;
     color: black;
 }
-nav> ul> li, nav> a{
+ul{
     list-style: none;
-    cursor: pointer;
-    color: black;
-    width: 148px;
-    height: 48px;
-    background-color: #EBCBAD;
-    border: solid 1px #8000ff;;
-    border-radius: 3px;
-    margin-top: -1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
-nav> ul> li:hover, nav> a:hover{
-    background-color: #FBF4EE;
-    color: Black;
-}
-nav> li>a{
+.sizeHeaderButton{
     width: 148px;
     height: 48px;
     display: flex;
@@ -57,28 +33,11 @@ nav> li>a{
     align-items: center;
     text-align: center;
 }
-.ulLi{
-    list-style: none;
-    cursor: pointer;
-    color: black;
-    width: 148px;
-    height: 48px;
-    background-color: #EBCBAD;
-    border: solid 1px #8000ff;;
-    border-radius: 3px;
+.menuCachePosition{
+    margin-top: 147px;
+}
+.menuCachePositionLi2{
     margin-top: -1px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content:center ;
-}
-.ulLi:hover{
-    background-color: #FBF4EE;
-    color: Black;
-}
-.flexLi{
-    display: flex;
-    justify-content: center;
 }
 .menuCache{
     display: none;
