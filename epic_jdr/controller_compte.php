@@ -18,7 +18,7 @@
           $message="non connecté";
       }
 
-    include "./view/header.php";
+    include "./controller_header.php";
     include "./view/view_compte.php";
     include "./view/footer.php";
 ?>

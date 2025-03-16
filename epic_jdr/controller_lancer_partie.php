@@ -4,7 +4,7 @@
 
 
 
-    include "./view/header.php";
+    include "./controller_header.php";
     include "./view/view_lancer_partie.php";
     include "./view/footer.php";
 ?>

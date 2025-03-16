@@ -1,9 +1,9 @@
 <?php
+    session_start();
     include "./model/model_index.php";
     include "./utils/functions.php";
-    include "./view/header.php";
+    include "./controller_header.php";
     include "./view/view_index.php";
-    session_start();
 
 class ControllerIndex{
 

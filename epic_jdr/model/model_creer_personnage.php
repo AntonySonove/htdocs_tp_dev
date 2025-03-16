@@ -8,6 +8,7 @@ class ModelCreerPersonnage{
     private ?int $atkm;
     private ?int $defm;
     private ?int $speed;
+    private ?int $id;
     private ?PDO $bdd;
 
     public function __construct(){
@@ -80,12 +81,14 @@ class ModelCreerPersonnage{
         $this->speed=$speed;
         return $this;
     }
+    public function getId(): ?int { return $this->id; }
+    public function setId(?int $id): self { $this->id = $id; return $this; }
 
     //! method
     public function addCharacter():?string{
         try{
 
-            $req=$this->getBdd()->prepare("INSERT INTO characters (name_character, lp, mp, atk, def, atkm, defm, speed) VALUES (?,?,?,?,?,?,?,?)");
+            $req=$this->getBdd()->prepare("INSERT INTO characters (name_character, lp, mp, atk, def, atkm, defm, speed, id_user) VALUES (?,?,?,?,?,?,?,?,?)");
             $name=$this->getName();
             $lp=$this->getLp();
             $mp=$this->getMp();
@@ -94,6 +97,7 @@ class ModelCreerPersonnage{
             $atkm=$this->getAtkm();
             $defm=$this->getDefm();
             $speed=$this->getSpeed();
+            $id=$this->getId();
             
             $req->bindParam(1,$name,PDO::PARAM_STR);
             $req->bindParam(2,$lp,PDO::PARAM_INT);
@@ -103,6 +107,7 @@ class ModelCreerPersonnage{
             $req->bindParam(6,$atkm,PDO::PARAM_INT);
             $req->bindParam(7,$defm,PDO::PARAM_INT);
             $req->bindParam(8,$speed,PDO::PARAM_INT);
+            $req->bindParam(9,$id,PDO::PARAM_INT);
             $req->execute();
             
             
@@ -128,4 +133,6 @@ class ModelCreerPersonnage{
             return $error->getMessage();
         }
     }
+
+
 }

@@ -1,7 +1,8 @@
 <?php
+session_start();
 include "./utils/functions.php";
 include "./model/model_creer_personnage.php";
-include "./view/header.php";
+include "./controller_header.php";
 include "./view/view_creer_personnage.php";
 
 
@@ -62,7 +63,7 @@ class ControllerCreerPersonnage{
             }
 
             //* donner les informations au model
-            $this->getModelCreerPersonnage()->setName($name)->setLp($lp)->setMp($mp)->setAtk($atk)->setDef($def)->setAtkm($atkm)->setDefm($defm)->setSpeed($speed);
+            $this->getModelCreerPersonnage()->setName($name)->setLp($lp)->setMp($mp)->setAtk($atk)->setDef($def)->setAtkm($atkm)->setDefm($defm)->setSpeed($speed)->setId($_SESSION["id_user"]);
             
             //* demander au model d'utiliser sa fonction add
             return $this->getModelCreerPersonnage()->addCharacter();

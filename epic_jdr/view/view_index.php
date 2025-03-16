@@ -33,7 +33,7 @@ class ViewIndex{
                         '.$this->getMessageConnexion().'
                     </div>
                 </div>
-                <input class="boutonJaune boutonConnexionInscription" type="submit" name="submitConnexion" class="bouton commencerLAventure" value="Continuer l\'aventure!"></input>
+                <input class="boutonJaune boutonConnexionInscription scale" type="submit" name="submitConnexion" class="bouton commencerLAventure" value="Continuer l\'aventure!"></input>
             </div>
         </form>
         <form id="inscription" class="divJaune column" method="post">
@@ -46,7 +46,7 @@ class ViewIndex{
                     <input type="password" name="password2" placeholder="Confirmer le mot de passe">
                     '.$this->getMessage().'
                 </div>
-                <input class="boutonJaune boutonConnexionInscription" type="submit" name="submit" class="bouton commencerLAventure" value="Commencer l\'aventure!"></input>
+                <input class="boutonJaune boutonConnexionInscription scale" type="submit" name="submit" class="bouton commencerLAventure" value="Commencer l\'aventure!"></input>
             </div> 
         </form>
     </div>
