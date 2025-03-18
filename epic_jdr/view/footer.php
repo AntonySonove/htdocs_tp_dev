@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="./src/style/footer.css">
 <footer>
             <a href="./mention_legales.html">mentions légales</a>
             <a href="./politique_de_confidentialite.html">politique de confidentialité</a>

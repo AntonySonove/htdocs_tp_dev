@@ -60,3 +60,5 @@ if(isset($_SESSION["id_user"]) && !empty( $_SESSION["id_user"] )){
 }
 
 include "./view/header.php";
+
+

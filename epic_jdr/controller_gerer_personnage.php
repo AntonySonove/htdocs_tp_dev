@@ -26,15 +26,16 @@ class ControllerGererPersonnage{
     public function getViewGererPersonnage(): ?ViewGererPersonnage { return $this->viewGererPersonnage; }
     public function setViewGererPersonnage(?ViewGererPersonnage $viewGererPersonnage): self { $this->viewGererPersonnage = $viewGererPersonnage; return $this; }
 
-    public function readCharacter():string{
+    public function readCharacter():array | string{
         $characterList="";
-
         foreach($this->modelGererPersonnage->getAll() as $row){
-            $characterList=$characterList."<article class= 'divJaune scale pointer textCenter'><a href='./controller_fiche_personnage.php' class= aSize>$row[name_character]</a></article>";
+            $characterList=$characterList."<article class= 'divJaune scale pointer textCenter'><a href='./controller_fiche_personnage.php?id=$row[id_character]' class= aSize>$row[name_character]</a></article>";
         }
         $this->viewGererPersonnage->setCharacterList($characterList);
+        
         return $characterList;
     }
+  
 
 
     public function render(){

@@ -8,10 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style/header.css">
+    <link rel="stylesheet" href="./src/style/footer.css">
     <link rel="stylesheet" href="./src/style/style.css">
     <link rel="stylesheet" href="./src/style/index.css">
     <link rel="stylesheet" href="./src/style/creer_personnage.css">
     <link rel="stylesheet" href="./src/style/gerer_personnage.css">
+    <link rel="stylesheet" href="./src/style/fiche_personnage.css">
     
 </head>
 <body>

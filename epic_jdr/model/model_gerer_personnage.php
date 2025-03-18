@@ -14,21 +14,23 @@ class ModelGererPersonnage{
     public function setBdd(?PDO $bdd): self { $this->bdd = $bdd; return $this; }
 
     //! method
-    public function getAll():array | string{
-        $req=$this->getBdd()->prepare("SELECT name_character FROM characters WHERE id_user=?");
+    public function getAll(): array | string{
 
-        $req->bindParam(1,$_SESSION['id_user'],PDO::PARAM_INT);
+        try {
 
-        $req->execute();
-
-        $res= $req->fetchAll(PDO::FETCH_ASSOC);
-
-        return $res;
-    }
-
-
-    public function goCharacter(){
-        
+            $req=$this->getBdd()->prepare("SELECT name_character,id_character FROM characters WHERE id_user=?");
+    
+            $req->bindParam(1,$_SESSION['id_user'],PDO::PARAM_INT);
+    
+            $req->execute();
+    
+            $res= $req->fetchAll(PDO::FETCH_ASSOC);
+    
+            return $res;
+            
+        }catch(PDOException $error){
+            return $error->getMessage();
+        }
     }
 }
 ?>

@@ -1,6 +1,5 @@
 <?php
-class ModelFichePersonnage{
-    //!attributs
+class ModelUpdatePersonnage{
     private ?string $name;
     private ?int $lp;
     private ?int $mp;
@@ -12,14 +11,10 @@ class ModelFichePersonnage{
     private ?int $id;
     private ?PDO $bdd;
 
-    
-
-    //!constructor
-    public function __construct() {
-        $this->bdd = dbConnect();
-
+    public function __construct(){
+        $this->bdd=dbConnect();
     }
-    //! getter et setter
+
     public function getName(): ?string { return $this->name; }
     public function setName(?string $name): self { $this->name = $name; return $this; }
 
@@ -46,32 +41,48 @@ class ModelFichePersonnage{
 
     public function getId(): ?int { return $this->id; }
     public function setId(?int $id): self { $this->id = $id; return $this; }
+
     public function getBdd(): ?PDO { return $this->bdd; }
     public function setBdd(?PDO $bdd): self { $this->bdd = $bdd; return $this; }
 
-    public function getOneCharacter():array | string{
+    public function Update(ModelFichePersonnage $modelFichePersonnage ):?string{
 
-        try {
+        try{
             
-        $req=$this->getBdd()->prepare("SELECT id_character, name_character, lp, mp, atk, def, atkm, defm, speed, id_user FROM characters WHERE id_character=?");
+            // $id = isset($_GET['id']) ? intval($_GET['id']) : null;
+            // $id_character=$modelFichePersonnage->getId();
 
-        $req->bindParam(1,$_GET["id"],PDO::PARAM_INT);
+            $req=$this->getBdd()->prepare("UPDATE characters SET lp= :lp, mp= :mp, atk= :atk, def= :def, atkm= :atkm, defm= :defm, speed= :speed WHERE id_character= :id_character");
 
-        $req->execute();
+            $lp=$modelFichePersonnage->getLp();
+            $mp=$modelFichePersonnage->getMp();
+            $atk=$modelFichePersonnage->getAtk();
+            $def=$modelFichePersonnage->getDef();
+            $atkm=$modelFichePersonnage->getAtkm();
+            $defm=$modelFichePersonnage->getDefm();
+            $speed=$modelFichePersonnage->getSpeed();
+    
+            $req->bindParam(":lp",$lp,PDO::PARAM_INT);
+            $req->bindParam(":mp",$mp,PDO::PARAM_INT);
+            $req->bindParam(":atk",$atk,PDO::PARAM_INT);
+            $req->bindParam(":def",$def,PDO::PARAM_INT);
+            $req->bindParam(":atkm",$atkm,PDO::PARAM_INT);
+            $req->bindParam(":defm",$defm,PDO::PARAM_INT);
+            $req->bindParam(":speed",$speed,PDO::PARAM_INT);
+            $req->bindParam(":id_character",$GET['id'],PDO::PARAM_INT);
+    
+            $req->execute();
 
-        $res=$req->fetchAll(PDO::FETCH_ASSOC);
-
-        return $res;
-
-        } catch (PDOException $error) {
+        }catch(Exception $error){
             return $error->getMessage();
         }
+        
+        
+        
+
+        return "<span style= 'color: green'*Le personnage à été modifié</span>";
     }
-
-    
-
-
-    
 }
+
 
 ?>
