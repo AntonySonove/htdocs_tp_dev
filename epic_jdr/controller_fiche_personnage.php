@@ -40,7 +40,7 @@ class ControllerFichePersonnage{
                 <div class='row spaceBetween'><p>Défense magique : </p><p>$row[defm]</p></div>
                 <div class='row spaceBetween'><p>Vitesse : </p><p>$row[speed]</p></div>
                 <div class='row justifyCenter'>
-                <a class= 'boutonJaune' href='./controller_update_personnage.php?$row[id_character]'>Modifier</a>
+                <a class= 'boutonJaune' href='./controller_update_personnage.php?id=$row[id_character]'>Modifier</a>
                 </div>
             ";
         }

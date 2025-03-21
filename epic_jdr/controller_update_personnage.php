@@ -34,7 +34,7 @@ class ControllerUpdatePersonnage{
         $atkm=$_POST["atkm"] ??null;
         $defm=$_POST["defm"] ??null;
         $speed=$_POST["speed"] ??null;
-        // $id=$_GET["id"] ?? null;
+        $id=$_GET["id"] ?? null;
 
         $modelFichePersonnage= new ModelFichePersonnage();
         $modelFichePersonnage->setLp($lp);
@@ -44,7 +44,7 @@ class ControllerUpdatePersonnage{
         $modelFichePersonnage->setAtkm($atkm);
         $modelFichePersonnage->setDefm($defm);
         $modelFichePersonnage->setSpeed($speed);
-        // $modelFichePersonnage->setId($id);
+        $modelFichePersonnage->setId($id);
 
         $modelUpdatePersonnage = new ModelUpdatePersonnage();
         return $modelUpdatePersonnage->Update($modelFichePersonnage);
@@ -61,6 +61,7 @@ class ControllerUpdatePersonnage{
 $updatePersonnage=new ControllerUpdatePersonnage(new ModelUpdatePersonnage(),new ViewUpdatePersonnage(),new ModelFichePersonnage());
 
 $updatePersonnage->render();
+echo $_GET["id"];
 
 include "./view/footer.php";
 ?>

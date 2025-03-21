@@ -61,6 +61,8 @@ class ModelUpdatePersonnage{
             $atkm=$modelFichePersonnage->getAtkm();
             $defm=$modelFichePersonnage->getDefm();
             $speed=$modelFichePersonnage->getSpeed();
+            $id=$modelFichePersonnage->getId();
+            
     
             $req->bindParam(":lp",$lp,PDO::PARAM_INT);
             $req->bindParam(":mp",$mp,PDO::PARAM_INT);
@@ -69,7 +71,7 @@ class ModelUpdatePersonnage{
             $req->bindParam(":atkm",$atkm,PDO::PARAM_INT);
             $req->bindParam(":defm",$defm,PDO::PARAM_INT);
             $req->bindParam(":speed",$speed,PDO::PARAM_INT);
-            $req->bindParam(":id_character",$GET['id'],PDO::PARAM_INT);
+            $req->bindParam(":id_character",$id,PDO::PARAM_INT);
     
             $req->execute();
 
